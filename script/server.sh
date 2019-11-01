@@ -8,7 +8,7 @@ port=${1:-49160}
 docker stop --time 0 animated-gif-service > /dev/null 2>&1
 
 # Remove the container
-docker rm animated-gif-service > /dev/null > /dev/null 2>&1
+docker rm animated-gif-service > /dev/null 2>&1
 
 echo "Running. To stop:\ndocker stop --time 0 animated-gif-service"
 
