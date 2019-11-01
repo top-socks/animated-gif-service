@@ -1,7 +1,21 @@
+const express = require('express');
+
 const logger = require('./lib/logger');
+const fetchImage = require('./lib/fetch-image');
 
-const items = [1, 2, 3, 4, 5];
+const app = express();
 
-const sum = items.reduce((total, item) => total + item, 0);
+app.get('/', async function(request, response) {
+  response.send('Hello, 世界');
+});
 
-logger.info(sum);
+app.get('/gifme/:gif', async function(request, response) {
+  const { contentType, content } = await fetchImage(`https://bukk.it/${ request.params.gif }`);
+
+  response.set('Content-Type', contentType)
+  response.send(content);
+});
+
+const listener = app.listen(process.env.PORT || 8000, function() {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
