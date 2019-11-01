@@ -21,7 +21,7 @@ jobs:
 
     - name: Audit
       run: |
-        cd app && npm run audit
+        cd app && npm audit
 
     - name: Build
       run: |
