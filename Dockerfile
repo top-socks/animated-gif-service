@@ -3,11 +3,11 @@ RUN apt-get update -y && apt-get upgrade -y
 RUN mkdir /app
 WORKDIR /app
 
-COPY package*.json ./
+COPY ./app/package*.json ./
 RUN npm ci --only=production
 
 # Bundle app source
-COPY . .
+COPY app .
 
 EXPOSE 8000
-ENTRYPOINT ["node", "/app/server.js"]
+ENTRYPOINT ["node", "/app/index.js"]

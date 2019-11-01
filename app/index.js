@@ -16,6 +16,6 @@ app.get('/gifme/:gif', async function(request, response) {
   response.send(content);
 });
 
-const listener = app.listen(process.env.PORT || 8000, function() {
+const listener = app.listen(process.env.PORT || 8000, process.env.HOST || '0.0.0.0', function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
