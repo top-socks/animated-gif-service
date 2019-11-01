@@ -11,6 +11,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1.0.0
 
+    - name: Cache node_modules
+      uses: actions/cache@preview
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
     - name: Install
       run: |
         cd app && npm ci
