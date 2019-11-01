@@ -1,5 +1,23 @@
-# JavaScript
+# `animated-gif-service`
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+> A microservice for all your animated gif needs
 
-How I JavaScript.
+<a href="https://github.com/swinton/animated-gif-service"><img alt="GitHub Actions status" src="https://github.com/swinton/animated-gif-service/workflows/Build/badge.svg"></a>
+
+## Usage
+
+Build the container image:
+
+```shell
+docker build -t animated-gif-service .
+```
+
+Run the container using [the `server.sh` script](script/server.sh):
+
+```shell
+./script/server.sh
+```
+
+## Contributing
+
+Contributions are welcome! Please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md) :heart:
