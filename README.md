@@ -2,7 +2,7 @@
 
 > A microservice for all your animated gif needs
 
-<a href="https://github.com/swinton/animated-gif-service"><img alt="GitHub Actions status" src="https://github.com/swinton/animated-gif-service/workflows/Build/badge.svg"></a>
+<a href="https://github.com/top-socks/animated-gif-service"><img alt="GitHub Actions status" src="https://github.com/top-socks/animated-gif-service/workflows/Build/badge.svg"></a>
 
 ## Usage
 
