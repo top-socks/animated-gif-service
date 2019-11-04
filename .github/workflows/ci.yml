@@ -6,6 +6,9 @@ on:
     branches:         # array of glob patterns matching against refs/heads. Optional; defaults to all
     - master          # triggers on pushes that contain changes in master
 
+env:
+  IMAGE: top-socks/animated-gif-service:{{ github.sha }}
+
 jobs:
   ci:
     name: CI
@@ -34,9 +37,9 @@ jobs:
 
     - name: Build
       run: |
-        docker build -t top-socks/animated-gif-service:$GITHUB_SHA .
+        docker build -t $IMAGE .
 
     - name: Deploy
       if: github.ref == 'refs/heads/master'
       run: |
-        echo docker push top-socks/animated-gif-service:$GITHUB_SHA
+        echo docker push $IMAGE
