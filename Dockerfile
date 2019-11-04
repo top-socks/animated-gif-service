@@ -1,5 +1,4 @@
-FROM node:8
-RUN apt-get update -y && apt-get upgrade -y
+FROM node:8-alpine
 RUN mkdir /app
 WORKDIR /app
 
