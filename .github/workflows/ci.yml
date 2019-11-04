@@ -42,4 +42,6 @@ jobs:
     - name: Deploy
       if: github.ref == 'refs/heads/master'
       run: |
-        echo docker push $IMAGE
+        docker tag $IMAGE docker.pkg.github.com/${{ github.repository }}/production:${{ github.sha }}
+        echo ${{ secrets.GITHUB_TOKEN }} | docker login -u ${{ github.user }} docker.pkg.github.com --password-stdin
+        docker push docker.pkg.github.com/${{ github.repository }}/production:${{ github.sha }}
