@@ -18,12 +18,16 @@ jobs:
       uses: actions/checkout@v1.0.0
 
     - name: Cache node_modules
-      uses: actions/cache@preview
+      id: cache
+      uses: actions/cache@v1
       with:
-        path: node_modules
+        path: app/node_modules
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-
+        restore-keys: |
+          ${{ runner.os }}-node-
+          
     - name: Install
+      if: steps.cache.outputs.cache-hit != 'true'
       run: |
         cd app && npm ci
 
