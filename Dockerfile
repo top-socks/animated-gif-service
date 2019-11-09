@@ -1,7 +1,5 @@
 FROM node:8-alpine
 
-RUN apk update && apk upgrade
-
 RUN mkdir /app
 WORKDIR /app
 
