@@ -44,7 +44,7 @@ jobs:
         docker build -t $IMAGE .
 
     - name: Scan image
-      uses: anchore/scan-action@v1.0.0
+      uses: anchore/scan-action@v1.0.9
       with:
         image-reference: $IMAGE
         fail-build: true
